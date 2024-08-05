@@ -25,17 +25,17 @@ pub struct Config {
 impl Config {
     pub fn build(
         mut args: impl Iterator<Item = String>
-    ) -> Result<Config, String> {
+    ) -> Result<Config, &'static str> {
         args.next();
 
         let query: String = match args.next() {
             Some(arg) => arg,
-            None => return Err("Didn't get a query string".to_string()),
+            None => return Err("Didn't get a query string"),
         };
 
         let file_path = match args.next() {
             Some(arg) => arg,
-            None => return Err("Didn't get any source file string".to_string())
+            None => return Err("Didn't get any source file string")
         };
         
         let mut ignore_case = env::var("IGNORE_CASE").is_ok(); 
@@ -45,7 +45,7 @@ impl Config {
             } else if arg == "--attend-case" {
                 ignore_case = false;
             } else {
-                return Err(format!("invalid flag `{arg}`, try using --ignore-case instead."));
+                return Err("Invalid `case` parameter; please use `--ignore-case` or `--attend-case`");
             }
         }
 
