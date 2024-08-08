@@ -3,6 +3,9 @@ name = "peppergrep"
 description = "A simple grep utility written following the 12th chapter of the Rust book. Some little modifications were made."
 version = "0.1.0"
 edition = "2021"
+documentation = "https://github.com/pepperjackdev/peppergrep/blob/master/README.md"
+repository = "https://github.com/pepperjackdev/peppergrep/tree/master"
+homepage = "https://github.com/pepperjackdev/peppergrep/tree/master"
 license = "MIT"
 
 [dependencies]
