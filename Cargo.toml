@@ -1,8 +1,8 @@
 [package]
 name = "peppergrep"
+description = "A simple grep utility written following the 12th chapter of the Rust book. Some little modifications were made."
 version = "0.1.0"
 edition = "2021"
-description = "A simple grep utility written following the 12th chapter of the Rust book. Some little modifications were made."
 license = "MIT"
 
 [dependencies]
